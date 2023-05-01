@@ -10,6 +10,7 @@ import { EmployeeHomePageComponent } from './Components/Employee/employee-home-p
 import { ManagerLoginComponent } from './Components/Login/manager-login/manager-login.component';
 import { EmployeeLoginComponent } from './Components/Login/employee-login/employee-login.component';
 import { AdminLoginComponent } from './Components/Login/admin-login/admin-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminLoginComponent } from './Components/Login/admin-login/admin-login.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
