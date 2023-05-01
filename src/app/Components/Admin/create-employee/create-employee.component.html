@@ -1,9 +1,15 @@
 <div class="container">
-  <form (ngSubmit)="submit()" [formGroup]="multistep">
+  <form
+    class="col-lg-6 mx-auto my-5"
+    (ngSubmit)="submit()"
+    [formGroup]="multistep"
+  >
     <div *ngIf="step == 1" formGroupName="personalDetails">
-      <h4>Personal Details</h4>
-      <div class="form-group">
-        <label for="firstName">First Name</label>
+      <div class="text-center mb-4">
+        <h4 class="display-6">Personal Details</h4>
+      </div>
+      <div class="form-group mb-3">
+        <label for="firstName" class="mb-1">First Name</label>
         <input
           type="text"
           id="firstName"
@@ -11,8 +17,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
+      <div class="form-group mb-3">
+        <label for="lastName" class="mb-1">Last Name</label>
         <input
           type="text"
           id="lastName"
@@ -20,8 +26,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
+      <div class="form-group mb-3">
+        <label for="phone" class="mb-1">Phone</label>
         <input
           type="text"
           id="phone"
@@ -29,8 +35,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
+      <div class="form-group mb-3">
+        <label for="email" class="mb-1">Email</label>
         <input
           type="email"
           id="email"
@@ -40,9 +46,11 @@
       </div>
     </div>
     <div *ngIf="step == 2" formGroupName="academicDetails">
-      <h4>Acedmic Details</h4>
-      <div class="form-group">
-        <label for="qualification">Qualification</label>
+      <div class="text-center mb-4">
+        <h4 class="display-6">Acedmic Details</h4>
+      </div>
+      <div class="form-group mb-3">
+        <label for="qualification" class="mb-1">Qualification</label>
         <input
           type="text"
           id="qualification"
@@ -50,8 +58,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="year">Year</label>
+      <div class="form-group mb-3">
+        <label for="year" class="mb-1">Year</label>
         <input
           type="text"
           id="year"
@@ -59,8 +67,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="college">College</label>
+      <div class="form-group mb-3">
+        <label for="college" class="mb-1">College</label>
         <input
           type="text"
           id="college"
@@ -68,8 +76,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="place">Place</label>
+      <div class="form-group mb-3">
+        <label for="place" class="mb-1">Place</label>
         <input
           type="text"
           id="place"
@@ -80,9 +88,11 @@
     </div>
 
     <div *ngIf="step == 3" formGroupName="professionalDetails">
-      <h4>Professional Details</h4>
-      <div class="form-group">
-        <label for="companyName">Company Name</label>
+      <div class="text-center mb-4">
+        <h4 class="display-6">Professional Details</h4>
+      </div>
+      <div class="form-group mb-3">
+        <label for="companyName" class="mb-1">Company Name</label>
         <input
           type="text"
           id="companyName"
@@ -90,8 +100,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="designation">Designation</label>
+      <div class="form-group mb-3">
+        <label for="designation" class="mb-1">Designation</label>
         <input
           type="text"
           id="designation"
@@ -99,8 +109,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="startDate">Start Date</label>
+      <div class="form-group mb-3">
+        <label for="startDate" class="mb-1">Start Date</label>
         <input
           type="date"
           id="startDate"
@@ -108,8 +118,8 @@
           class="form-control"
         />
       </div>
-      <div class="form-group">
-        <label for="endDate">End Date</label>
+      <div class="form-group mb-3">
+        <label for="endDate" class="mb-1">End Date</label>
         <input
           type="date"
           id="endDate"
@@ -119,22 +129,25 @@
       </div>
     </div>
 
-    <button
-      type="submit"
-      class="btn btn-primary"
-      *ngIf="step != 1"
-      (click)="previous()"
-    >
-      Previous
-    </button>
+    <div class="my-4 text-center">
+      <button
+        type="submit"
+        class="btn btn-info me-3"
+        *ngIf="step != 1"
+        (click)="previous()"
+      >
+        Previous
+      </button>
 
-    <button type="submit" class="btn btn-primary" *ngIf="step != 3">
-      Next
-    </button>
+      <button type="submit" class="btn btn-primary me-3" *ngIf="step != 3">
+        Next
+      </button>
 
-    <button type="submit" class="btn btn-primary" *ngIf="step == 3">
-      Submit
-    </button>
+      <button type="submit" class="btn btn-success" *ngIf="step == 3">
+        Submit
+      </button>
+    </div>
+
     <br />
     {{ multistep.value | json }}
   </form>
